@@ -1,0 +1,11 @@
+<h2 class="grid__headline">LOGIN</h2>
+<h3 class="h3__styles">Please, enter your details</h3>
+
+<h3 class="h3__styles"><%= error_message %></h3>
+<form action="/sessions" method="POST" class="white__background">
+  <label for="email">Email:</label>
+  <input class="input__style" type="text" name="email">
+  <label for="password">Password</label>
+  <input class="input__style" type="password" name="password">
+  <input type="submit" name="Login" value="LOGIN">
+</form>

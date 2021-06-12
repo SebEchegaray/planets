@@ -1,0 +1,33 @@
+<% action = "/info" %>
+<% if edit %>
+  <% action += "/" + info["id"] + "/add" %>
+<% end %>
+
+<form action="<%= action %>" method="POST" class="white__background">
+  <% if edit %>
+    <input type="hidden" name="_method" value="PUT">
+  <% end %>
+  <label for="name">Name:</label>
+  <input class="input__style" type="text" name="name" value="<% if edit %><%= info["name"] %><% end %>"><br>
+
+  <label for="diameter">Diameter:</label>
+  <input class="input__style" type="text" name="diameter" value="<% if edit %><%= info["diameter"] %><% end %>"><br>
+
+  <label for="distance">Distance:</label>
+  <input class="input__style" type="text" name="distance" value="<% if edit %><%= info["distance"] %><% end %>"><br>
+
+  <label for="mass">Mass:</label>
+  <input class="input__style" type="text" name="mass" value="<% if edit %><%= info["mass"] %><% end %>"><br>
+
+  <label for="moon_count">Moon Count:</label>
+  <input class="input__style" type="text" name="moon_count" value="<% if edit %><%= info["moon_count"] %><% end %>"><br>
+
+  <label for="image_url">Image URL:</label>
+  <input class="input__style" type="text" name="image_url" value="<% if edit %><%= info["image_url"] %><% end %>"><br>
+
+  <% btn_value = "Add planet" %>
+  <% if edit %>
+    <% btn_value = "Edit planet" %>
+  <% end %>
+  <input type="submit" value="<%= btn_value %>">
+</form>

@@ -1,0 +1,14 @@
+<h2 class="grid__headline">Welcome to the Planets Database</h2>
+
+<section class="planets__grid">
+  <% planet.each do |info| %>
+    <section class="each__planet white__background">
+      <h3><a href="/info/<%= info["id"] %>"><%= info["name"] %></a></h3>
+      <p><%= info["diameter"] %> Km</p>
+      <p><%= info["distance"] %> million Km</p>
+      <p><%= info["mass"] %> Kg</p>
+      <p><%= info["moon_count"] %> <% if info["moon_count"].to_i > 1 %>moons<% else %>moon<% end %></p>
+      <img src="<%= info["image_url"] %>" alt="" width="200">
+    </section>
+  <% end %>
+</section>

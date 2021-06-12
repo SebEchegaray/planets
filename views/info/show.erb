@@ -1,0 +1,15 @@
+<section class="each__planet-show white__background">
+  <h2><%= info["name"] %></h2>
+  <h3><%= info["diameter"] %> Km</h3>
+  <h3><%= info["distance"] %> million Km</h3>
+  <h3><%= info["mass"] %> Kg</h3>
+  <h3><%= info["moon_count"] %></h3>
+  <img src="<%= info["image_url"] %>" alt="" width="500">
+  <form action="/info/<%= info["id"] %>/edit">
+      <input class="input__style" type="submit" value="Edit">
+  </form>
+  <form action="/info/<%= info["id"] %>/delete" method="POST">
+      <input class="input__style" type="hidden" name="_method" value="DELETE">
+      <input class="input__style" type="submit" value="Delete">
+  </form>
+</section>
